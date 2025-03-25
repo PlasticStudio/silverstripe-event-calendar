@@ -26,6 +26,7 @@ use SilverStripe\Forms\FormAction;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\View\Requirements;
 use \PageController;
+use SilverStripe\Control\Controller;
 
 class CalendarController extends PageController 
 {
@@ -63,7 +64,7 @@ class CalendarController extends PageController
 	public function init()
 	{
 		parent::init();
-		RSSFeed::linkToFeed($this->Link() . "rss", $this->RSSTitle ? $this->RSSTitle : $this->Title);
+		RSSFeed::linkToFeed(Controller::join_links($this->Link() , "rss"), $this->RSSTitle ? $this->RSSTitle : $this->Title);
 		if (Calendar::config()->include_default_css) {
 			Requirements::css('unclecheese/silverstripe-event-calendar:client/dist/css/calendar.css');
 		}

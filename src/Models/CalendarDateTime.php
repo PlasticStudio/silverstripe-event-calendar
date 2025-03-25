@@ -23,6 +23,8 @@ use SilverStripe\Security\Permission;
 use UncleCheese\EventCalendar\Helpers\CalendarUtil;
 use UncleCheese\EventCalendar\Model\CalendarAnnouncement;
 use UncleCheese\EventCalendar\Pages\CalendarEvent;
+use SilverStripe\Security\Security;
+
 
 class CalendarDateTime extends DataObject 
 {
@@ -324,7 +326,7 @@ class CalendarDateTime extends DataObject
 	public function canCreate($member = null, $context = [])
 	{
 		if (!$member) {
-			$member = Member::currentUser();
+			$member = Security::getCurrentUser();
 		}
 		$extended = $this->extendedCan(__FUNCTION__, $member);
 		if($extended !== null) {
@@ -339,7 +341,7 @@ class CalendarDateTime extends DataObject
 	public function canEdit($member = null)
 	{
 		if (!$member) {
-			$member = Member::currentUser();
+			$member = Security::getCurrentUser();
 		}
 		$extended = $this->extendedCan(__FUNCTION__, $member);
 		if($extended !== null) {
@@ -354,7 +356,7 @@ class CalendarDateTime extends DataObject
 	public function canDelete($member = null)
 	{
 		if (!$member) {
-			$member = Member::currentUser();
+			$member = Security::getCurrentUser();
 		}
 		$extended = $this->extendedCan(__FUNCTION__, $member);
 		if($extended !== null) {
@@ -369,7 +371,7 @@ class CalendarDateTime extends DataObject
 	public function canView($member = null)
 	{
 		if (!$member) {
-			$member = Member::currentUser();
+			$member = Security::getCurrentUser();
 		}
 		$extended = $this->extendedCan(__FUNCTION__, $member);
 		if($extended !== null) {
