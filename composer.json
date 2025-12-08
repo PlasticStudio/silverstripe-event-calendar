@@ -18,7 +18,7 @@
 		}
 	],
 	"require": {
-		"silverstripe/cms": "^4 || ^5",
+		"silverstripe/cms": "^6",
 		"johngrogg/ics-parser": "^2",
 		"nesbot/carbon": "^2"
 	},
