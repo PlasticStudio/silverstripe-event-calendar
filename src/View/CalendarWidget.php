@@ -5,10 +5,10 @@ namespace UncleCheese\EventCalendar\Views;
 use SilverStripe\Core\Convert;
 use SilverStripe\Core\Manifest\ModuleResourceLoader;
 use SilverStripe\View\Requirements;
-use SilverStripe\View\ViewableData;
+use SilverStripe\Model\ModelData;
 use UncleCheese\EventCalendar\Pages\Calendar;
 
-class CalendarWidget extends ViewableData
+class CalendarWidget extends ModelData
 {
 	protected $calendar;
 
