@@ -208,6 +208,8 @@ class CalendarEvent extends Page
 		});
 		
 		$f = parent::getCMSFields();
+
+		//
 		
 		return $f;
 	}
