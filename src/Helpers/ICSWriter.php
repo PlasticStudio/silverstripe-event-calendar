@@ -149,11 +149,11 @@ class ICSWriter
      * 
      * @author Alex Hayes <alex.hayes@dimension27.com>
      */
-	protected function getFormatedDateTime(Date $date = null, Time $time = null)
+	protected function getFormatedDateTime(?Date $date = null, ?Time $time = null)
 	{
 		$timestamp = null;
-		if ($date && $time) {
-			$timestamp = strtotime($date . ' ' . $time);
+		if ($date && $time) {	
+			$timestamp = strtotime($date . ' ' . $time);	
 		} else {
 			$timestamp = time();
 		}
