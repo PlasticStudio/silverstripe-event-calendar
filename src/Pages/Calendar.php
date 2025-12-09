@@ -75,9 +75,9 @@ class Calendar extends Page
 		'DefaultView'			=> 'upcoming'
 	];
 
-	private static $icon = "unclecheese/silverstripe-event-calendar:client/dist/images/calendar-file.gif";
+	private static $cms_icon = "unclecheese/silverstripe-event-calendar:client/dist/images/calendar-file.gif";
 
-	private static $description = "A collection of calendar events";
+	private static $class_description = "A collection of calendar events";
 
 	/**
 	 * @var int

@@ -64,9 +64,9 @@ class CalendarEvent extends Page
 		'RecurringDaysOfMonth'	=> RecurringDayOfMonth::class
 	];
 
-	private static $icon = "unclecheese/silverstripe-event-calendar:client/dist/images/event-file.gif";	
+	private static $cms_icon = "unclecheese/silverstripe-event-calendar:client/dist/images/event-file.gif";	
 
-	private static $description = "An individual event entry";
+	private static $class_description = "An individual event entry";
 
 	private static $datetime_class = CalendarDateTime::class;
 	
