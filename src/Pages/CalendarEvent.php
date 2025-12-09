@@ -75,10 +75,26 @@ class CalendarEvent extends Page
 	public function getCMSFields()
 	{
 		$self = $this;
+
 		
 		$this->beforeUpdateCMSFields(function($f) use ($self) {
 			Requirements::javascript('unclecheese/silverstripe-event-calendar:client/dist/js/calendar_cms.js');
 			Requirements::css('unclecheese/silverstripe-event-calendar:client/dist/css/calendar_cms.css');
+			
+			$f->removeByName('Location');
+			$f->removeByName('DateTimes');
+			$f->removeByName('Recursion');
+			$f->removeByName('CustomRecursionType');
+			$f->removeByName('DailyInterval');
+			$f->removeByName('WeeklyInterval');
+			$f->removeByName('RecurringDaysOfWeek');
+			$f->removeByName('MonthlyInterval');
+			$f->removeByName('MonthlyRecursionType1');
+			$f->removeByName('RecurringDaysOfMonth');
+			$f->removeByName('MonthlyRecursionType2');
+			$f->removeByName('MonthlyIndex');
+			$f->removeByName('MonthlyDayOfWeek');
+			$f->removeByName('Exceptions');
 			
 			$f->addFieldToTab("Root.Main",
 				TextField::create(
@@ -208,8 +224,6 @@ class CalendarEvent extends Page
 		});
 		
 		$f = parent::getCMSFields();
-
-		//
 		
 		return $f;
 	}
