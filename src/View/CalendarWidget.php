@@ -50,7 +50,7 @@ class CalendarWidget extends ModelData
 		return $this;
 	}
 
-	public function forTemplate()
+	public function forTemplate(): string
 	{
 		if (!Calendar::config()->jquery_included) {
 			Requirements::javascript('silverstripe/admin:thirdparty/jquery/jquery.min.js');
